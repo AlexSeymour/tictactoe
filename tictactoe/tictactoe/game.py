@@ -17,12 +17,18 @@ class Game(object):
 
 
     def current_player_tour_per_tour_iterator(self):
+        """
+        Générateur qui retourne le joueur.
+        """
         for gamer in itertools.cycle(Player.players):
             Game.current_player = gamer
             yield Game.current_player
 
 
     def next_player(self):
+        """
+        Retourne le joueur suivant
+        """
         return next(self.next_tour)
 
 

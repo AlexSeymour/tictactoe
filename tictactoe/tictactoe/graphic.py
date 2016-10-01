@@ -17,6 +17,9 @@ def case_callback(case_selected, button):
 
 
 class Application(object):
+    """
+    Représente la partie du programme, c' est à dire la fenêtre.
+    """
     def __init__(self, parent):
         self.parent = parent
         self.cases = []
@@ -25,7 +28,10 @@ class Application(object):
         self.frames = []
 
     def grid(self):
+        """
+        Initialise la grille en fonction de l' objet grid.grid
 
+        """
         for line in grid.cases.values():
             frame = Frame(self.parent)
             frame.pack(side=BOTTOM)

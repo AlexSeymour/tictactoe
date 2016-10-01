@@ -2,6 +2,9 @@ EMPTY = 0
 
 
 class Case(object):
+    """
+    Représente la case d' une grille
+    """
     nb_case = 0
 
     def __init__(self, player=None, status=EMPTY):

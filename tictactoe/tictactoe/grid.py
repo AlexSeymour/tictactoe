@@ -40,7 +40,7 @@ class Grid(object):
 
 
 
-    def find_winner_horizontal(self):
+    def __find_winner_horizontal(self):
 
         winner = None
         for y, x in self.cases.items():
@@ -52,7 +52,7 @@ class Grid(object):
         return None
 
 
-    def find_winner_vertical(self):
+    def __find_winner_vertical(self):
         winner = None
         line_y = []
         for index in range(3):
@@ -67,7 +67,7 @@ class Grid(object):
 
 
 
-    def find_winner_diagonal_left_to_right(self):
+    def __find_winner_diagonal_left_to_right(self):
         winner = None
         line_diagonal = []
 
@@ -81,7 +81,7 @@ class Grid(object):
         return None
 
 
-    def find_winner_diagonal_right_to_left(self):
+    def __find_winner_diagonal_right_to_left(self):
         winner = None
         line_diagonal = []
 
@@ -96,20 +96,22 @@ class Grid(object):
 
 
     def check_winner(self):
-
-        finded = self.find_winner_diagonal_left_to_right()
+        """
+        retourne une ligne complété par le même joueur (gagnant)
+        """
+        finded = self.__find_winner_diagonal_left_to_right()
         if finded is not None:
             return finded
 
-        finded = self.find_winner_diagonal_right_to_left()
+        finded = self.__find_winner_diagonal_right_to_left()
         if finded is not None:
             return finded
 
-        finded = self.find_winner_horizontal()
+        finded = self.__find_winner_horizontal()
         if finded is not None:
             return finded
 
-        finded = self.find_winner_vertical()
+        finded = self.__find_winner_vertical()
         if finded is not None:
             return finded
 
