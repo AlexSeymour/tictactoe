@@ -53,7 +53,7 @@ class Application(object):
         for frame in self.frames:
             frame.destroy()
 
-        grid.cases = grid.get_cases_empty()
+        grid.cases = get_cases_empty()
         self.grid()
 
 
